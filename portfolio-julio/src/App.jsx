@@ -596,7 +596,6 @@ function FormacaoSection() {
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 export default function Portfolio() {
-  export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 

@@ -542,8 +542,8 @@ function FormacaoSection() {
       <div style={{ maxWidth:1000, margin:"0 auto", display:"flex", flexDirection:"column", gap:12 }}>
         {[
           { id:"EDU-01", icon:"🎓", title:"Engenheiro de Controle e Automação", school:"UNIFEI — Universidade Federal de Itajubá", year:"2018", status:"CONCLUÍDO" },
-          { id:"EDU-02", icon:"📊", title:"Ciência de Dados", school:"XP Educação", year:"2023–2027", status:"EM ANDAMENTO" },
-          { id:"EDU-03", icon:"📋", title:"MBA em Gestão de Projetos", school:"USP / Esalq", year:"2021–2023", status:"CONCLUÍDO" },
+          { id:"EDU-02", icon:"📋", title:"MBA em Gestão de Projetos", school:"USP / Esalq", year:"2021–2023", status:"CONCLUÍDO" },
+          { id:"EDU-03", icon:"📊", title:"Ciência de Dados", school:"XP Educação", year:"2023–2027", status:"EM ANDAMENTO" },
         ].map((edu, i) => (
           <FadeIn key={i} delay={i * 0.08}>
             <div
@@ -741,7 +741,7 @@ export default function Portfolio() {
           </div>
 
           <div style={{ display:"flex",flexWrap:"wrap",justifyContent:"center",gap:0,marginTop:8,background:"rgba(2,18,32,0.75)",border:"1px solid rgba(34,211,238,0.07)",borderRadius:20,overflow:"hidden",backdropFilter:"blur(10px)" }}>
-            {[["8+","Anos","de exp."],["29+","Usinas","atendidas"],["1450","MW","comissionados"],["1°","Lugar","CTG 2025"]].map(([big,mid,small],i) => (
+            {[["8+","Anos","de exp."],["29+","Usinas","atendidas"],["1450","MW","comissionados"]].map(([big,mid,small],i) => (
               <div key={i} style={{ padding:"20px 26px",textAlign:"center",borderRight:i<3?"1px solid rgba(34,211,238,0.07)":"none" }}>
                 <div style={{ fontFamily:"'Space Grotesk'",fontWeight:800,fontSize:26,color:"#22d3ee",lineHeight:1 }}>
                   {big.includes("+") ? <><Counter to={parseInt(big)} />+</> : big}

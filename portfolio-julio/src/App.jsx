@@ -672,7 +672,7 @@ export default function Portfolio() {
           <div>
             <p className="section-label">Engenheiro de Controle, Automação e Dados</p>
             <h1 style={{ fontFamily:"'Space Grotesk'",fontWeight:800,fontSize:"clamp(3rem,9vw,5.5rem)",lineHeight:1.0,margin:"8px 0" }}>
-              <span style={{ background:"linear-gradient(135deg,#e0f7ff,#67e8f9)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text" }}>Júlio Lima</span>
+              <span style={{ background:"linear-gradient(135deg,#e0f7ff,#67e8f9)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text" }}>Júlio</span>
               <br />
               <span style={{ background:"linear-gradient(135deg,#22d3ee,#0891b2)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text" }}>Casagrande</span>
             </h1>
@@ -833,7 +833,7 @@ export default function Portfolio() {
       <footer style={{ borderTop:"1px solid rgba(34,211,238,0.06)",padding:"24px 6%",textAlign:"center",color:"rgba(34,211,238,0.2)",fontSize:13,position:"relative",zIndex:2,display:"flex",justifyContent:"center",gap:10,alignItems:"center" }}>
         <Turbine size={16} speed="4s" />
         <span style={{ fontFamily:"'Space Grotesk'",fontWeight:700,color:"rgba(34,211,238,0.28)" }}>JLC</span>
-        <span>· Júlio Lima Casagrande © 2025 · Engenheiro de Controle, Automação e Dados</span>
+        <span>· Júlio Casagrande © 2025 · Engenheiro de Controle, Automação e Dados</span>
       </footer>
     </div>
   );

@@ -596,6 +596,8 @@ function FormacaoSection() {
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 export default function Portfolio() {
+  export default function Portfolio() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
@@ -645,18 +647,61 @@ export default function Portfolio() {
 
       {/* ── NAV ── */}
       <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:50,backdropFilter:"blur(20px)",background:"rgba(2,10,18,0.88)",borderBottom:"1px solid rgba(34,211,238,0.07)",padding:"0 6%" }}>
+        <style>{`
+          .nav-links { display: flex; gap: 32px; align-items: center; }
+          .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+          .hamburger span { display: block; width: 22px; height: 2px; background: #22d3ee; border-radius: 2px; transition: all 0.3s; }
+          .mobile-menu { display: none; }
+          @media (max-width: 600px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .mobile-menu {
+              display: flex; flex-direction: column; gap: 0;
+              position: fixed; top: 66px; left: 0; right: 0;
+              background: rgba(2,10,18,0.97); backdrop-filter: blur(20px);
+              border-bottom: 1px solid rgba(34,211,238,0.1);
+              padding: 8px 0; z-index: 49;
+            }
+            .mobile-menu span {
+              padding: 14px 6%; font-size: 12px; font-weight: 700;
+              letter-spacing: 0.15em; text-transform: uppercase;
+              color: rgba(148,218,238,0.6); cursor: pointer;
+              border-bottom: 1px solid rgba(34,211,238,0.05);
+              transition: color 0.2s, background 0.2s;
+            }
+            .mobile-menu span:hover { color: #22d3ee; background: rgba(34,211,238,0.04); }
+          }
+        `}</style>
+      
         <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",height:66 }}>
           <div style={{ fontFamily:"'Space Grotesk'",fontWeight:800,fontSize:20,display:"flex",alignItems:"center",gap:10 }}>
             <span style={{ color:"#22d3ee",filter:"drop-shadow(0 0 8px #22d3ee88)" }}>JLC</span>
             <span style={{ width:6,height:6,borderRadius:"50%",background:"#22d3ee",animation:"pulseGlow 2s ease-in-out infinite",display:"inline-block" }} />
           </div>
-          {/* Nav links com gap adequado */}
-          <div style={{ display:"flex",gap:36,alignItems:"center",flexWrap:"wrap" }}>
+      
+          {/* Desktop links */}
+          <div className="nav-links">
             {[["Sobre","sobre"],["Carreira","carreira"],["Projetos","projetos"],["Skills","skills"],["Contato","contato"]].map(([label,id]) => (
               <span key={id} className="nav-link" onClick={() => scrollTo(id)}>{label}</span>
             ))}
           </div>
+      
+          {/* Hamburger */}
+          <div className="hamburger" onClick={() => setMenuOpen(o => !o)}>
+            <span style={{ transform: menuOpen ? "rotate(45deg) translate(5px,5px)" : "none" }} />
+            <span style={{ opacity: menuOpen ? 0 : 1 }} />
+            <span style={{ transform: menuOpen ? "rotate(-45deg) translate(5px,-5px)" : "none" }} />
+          </div>
         </div>
+      
+        {/* Mobile menu */}
+        {menuOpen && (
+          <div className="mobile-menu">
+            {[["Sobre","sobre"],["Carreira","carreira"],["Projetos","projetos"],["Skills","skills"],["Contato","contato"]].map(([label,id]) => (
+              <span key={id} onClick={() => { scrollTo(id); setMenuOpen(false); }}>{label}</span>
+            ))}
+          </div>
+        )}
       </nav>
 
       {/* ── HERO ── */}
